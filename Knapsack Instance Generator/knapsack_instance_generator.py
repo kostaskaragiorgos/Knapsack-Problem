@@ -1,10 +1,11 @@
 """
 knapsack instance generator
 """
-from tkinter import Menu, Tk
+from tkinter import Label, Text, Button, Tk, Menu, IntVar, Radiobutton
+from tkinter import filedialog, END
+from tkinter import simpledialog
 from tkinter import messagebox as msg
-from tkinter import filedialog
-import random
+import random as rd
 def helpmenu():
     """ help menu """
     msg.showinfo("HELP", "HELP ")
@@ -32,9 +33,25 @@ class KnapsackInstanceGenerator():
         self.menu.add_cascade(label="Help", menu=self.help_menu)
         self.master.config(menu=self.menu)
 
+        self.itemleb = Label(self.master, text="Enter the number of items")
+        self.itemleb.pack()
+        self.itemtext = Text(self.master, height=1, width=3)
+        self.itemtext.pack()
+
+        self.maxweightleb = Label(self.master, text="Enter the max weight")
+        self.maxweightleb.pack()
+        self.maxweighttext = Text(self.master, height=1, width=3)
+        self.maxweighttext.pack()
+
+        self.geb = Button(self.master, text="GENERATE", command=self.gen)
+        self.geb.pack()
+
         self.master.bind('<Alt-F4>', lambda event: self.exitmenu())
         self.master.bind('<Control-F1>', lambda event: helpmenu())
         self.master.bind('<Control-i>', lambda event: aboutmenu())
+    
+    def gen(self):
+        pass
         
     def exitmenu(self):
         """ exit menu"""
