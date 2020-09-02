@@ -11,3 +11,13 @@ class Item(object):
     
     def __str__(self):
         return 'Value:' + str(self.value) + ' Weight:' + str(self.weight)
+
+
+def value(item):
+    return item.getValue()
+
+def weightInverse(item):
+    return 1.0/item.getWeight()
+
+def density(item):
+    return item.getValue()/item.getWeight()
