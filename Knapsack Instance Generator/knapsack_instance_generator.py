@@ -1,9 +1,8 @@
 """
 knapsack instance generator
 """
-from tkinter import Label, Text, Button, Tk, Menu, IntVar, Radiobutton
+from tkinter import Label, Text, Button, Tk, Menu
 from tkinter import filedialog, END
-from tkinter import simpledialog
 from tkinter import messagebox as msg
 import random as rd
 def helpmenu():
@@ -53,17 +52,18 @@ class KnapsackInstanceGenerator():
         self.master.bind('<Control-o>', lambda event: self.gen())
     
     def gen(self):
+        """ generates the instance"""
         try:
-            if (int(self.itemtext.get(1.0, END)) > 1) and (int(self.maxweighttext.get(1.0, END))>0):
+            if (int(self.itemtext.get(1.0, END)) > 1) and (int(self.maxweighttext.get(1.0, END)) > 0):
                 filenamesave = filedialog.asksaveasfilename(initialdir="/",
                                                             title="Select file",
                                                             filetypes=(("txt files", "*.txt"),
-                                                                        ("all files", "*.*")))
+                                                                       ("all files", "*.*")))
                 if ".txt" in filenamesave:
                     with open(filenamesave, 'w') as f:
-                        f.write(str(self.itemtext.get(1.0, END)) +' ' + str(self.maxweighttext.get(1.0,END))+ "\n")
+                        f.write(str(self.itemtext.get(1.0, END)) +' ' + str(self.maxweighttext.get(1.0, END))+ "\n")
                         for _ in range(int(self.itemtext.get(1.0, END))):
-                            f.write(str(rd.randint(10,1000)) + ' ' + str(rd.randint(10,1000)) + "\n")
+                            f.write(str(rd.randint(10, 1000)) + ' ' + str(rd.randint(10, 1000)) + "\n")
                 else:
                     msg.showerror("Abort", "Abort")
             else:
