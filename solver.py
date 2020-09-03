@@ -3,7 +3,7 @@
 from tkinter import Menu, Button, StringVar, OptionMenu, messagebox as msg, filedialog, Tk
 from file_parser import fileparser
 from greedy import greedy
-from item import value, Item
+from item import value, Item, density, weightInverse
 def helpmenu():
     """ help menu """
     msg.showinfo("Help", "A knapsack Problem solver")
@@ -47,6 +47,12 @@ class KnapsackSolver():
         self.binsert = Button(self.master, text="Insert a file", command=self.insertfile)
         self.binsert.pack()
 
+        setslist = list(["WeightInverse", "Density", "Value"])
+        self.varnumset = StringVar(master)
+        self.varnumset.set(setslist[0])
+        self.popupsetmenu = OptionMenu(self.master, self.varnumset, *setslist)
+        self.popupsetmenu.pack()
+
     def file_verification(self):
         """ verifies that the inserted file is a knapsack problem instance """
         if ".txt" in self.filed:
@@ -76,7 +82,12 @@ class KnapsackSolver():
         listofitems = []
         for i in range(len(self.item)):
             listofitems.append(Item(int(self.item[i]), int(self.weight[i])))
-        result, totalvalue = greedy(listofitems, int(self.maxW), value)
+        if self.varnumset.get() == "Value":
+            result, totalvalue = greedy(listofitems, int(self.maxW), value)
+        elif self.varnumset.get() == "Density":
+            result, totalvalue = greedy(listofitems, int(self.maxW), density)
+        else:
+            result, totalvalue = greedy(listofitems, int(self.maxW), weightInverse)
         msg.showinfo("Solution:", str(totalvalue))
 
     def exitmenu(self):
