@@ -22,6 +22,16 @@
 
 
 ## Files/Folders
+<ul>
+    <li> images(images folder) </li>
+    <li> doc(document folder) </li>
+    <li> file_parser.py(knapsack problem parser file) </li>
+    <li> solver.py(knapsack problem solver) </li>
+    <li> greedy.py(greedy algorithm file) </li>
+    <li> item.py(item class file) </li>
+    <li> solver_keybinds.txt(.txt keybinds file) </li>
+</ul>
+
 
 ## Dependencies
 
