@@ -38,6 +38,7 @@ pip install -r requirements.txt
 <ul>
   <li> Insert a file Ctrl + O </li>
   <li> Solve Alt + F5 </li>
+  <li> Close File Ctrl + F5 </li>
   <li> Exit Alt + F4 </li>
   <li> About Ctrl + I </li>
   <li> Help Ctrl + F1 </li>
