@@ -1,7 +1,9 @@
   
 """ KNAPSACK  SOLVER """
 from tkinter import Menu, Button, StringVar, OptionMenu, messagebox as msg, filedialog, Tk
-
+from file_parser import fileparser
+from greedy import greedy
+from item import value, Item
 def helpmenu():
     """ help menu """
     msg.showinfo("Help", "A knapsack Problem solver")
@@ -51,6 +53,7 @@ class KnapsackSolver():
             try:
                 self.solvb = Button(self.master, text="Solve", command=self.solve)
                 self.solvb.pack()
+                self.nofi, self.maxW, self.item, self.weight = fileparser(self.filed)
                 msg.showinfo("SUCCESS",
                              "THE FILE SUCCESSFULLY INSERTED ")
             except ValueError:
@@ -70,7 +73,11 @@ class KnapsackSolver():
             msg.showerror("ERROR", "YOU NEED TO CLOSE THE FILE")
     
     def solve(self):
-        pass
+        listofitems = []
+        for i in range(len(self.item)):
+            listofitems.append(Item(int(self.item[i]), int(self.weight[i])))
+        result, totalvalue = greedy(listofitems, int(self.maxW), value)
+        msg.showinfo("Solution:", str(totalvalue))
 
     def exitmenu(self):
         """ exit """
