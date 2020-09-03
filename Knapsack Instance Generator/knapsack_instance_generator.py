@@ -50,6 +50,14 @@ class KnapsackInstanceGenerator():
         self.master.bind('<Control-F1>', lambda event: helpmenu())
         self.master.bind('<Control-i>', lambda event: aboutmenu())
         self.master.bind('<Control-o>', lambda event: self.gen())
+
+    def save_to_file(self, filename):
+        """ saves the instance to a .txt file"""
+        with open(filename, 'w') as f:
+            f.write(str(self.itemtext.get(1.0, END)) +' ' + str(self.maxweighttext.get(1.0, END))+ "\n")
+            for _ in range(int(self.itemtext.get(1.0, END))):
+                f.write(str(rd.randint(10, 1000)) + ' ' + str(rd.randint(10, 1000)) + "\n")
+
     
     def gen(self):
         """ generates the instance"""
@@ -60,10 +68,7 @@ class KnapsackInstanceGenerator():
                                                             filetypes=(("txt files", "*.txt"),
                                                                        ("all files", "*.*")))
                 if ".txt" in filenamesave:
-                    with open(filenamesave, 'w') as f:
-                        f.write(str(self.itemtext.get(1.0, END)) +' ' + str(self.maxweighttext.get(1.0, END))+ "\n")
-                        for _ in range(int(self.itemtext.get(1.0, END))):
-                            f.write(str(rd.randint(10, 1000)) + ' ' + str(rd.randint(10, 1000)) + "\n")
+                    self.save_to_file(filenamesave)
                 else:
                     msg.showerror("Abort", "Abort")
             else:
