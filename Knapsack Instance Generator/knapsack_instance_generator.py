@@ -23,6 +23,7 @@ class KnapsackInstanceGenerator():
         self.master.resizable(False, False)
         self.menu = Menu(self.master)
         self.file_menu = Menu(self.menu, tearoff=0)
+        self.file_menu.add_command(label="Generate", accelerator='Ctrl+O', command=self.gen)
         self.file_menu.add_command(label="Exit", accelerator='Alt+F4', command=self.exitmenu)
         self.menu.add_cascade(label="File", menu=self.file_menu)
         self.about_menu = Menu(self.menu, tearoff=0)
@@ -49,11 +50,22 @@ class KnapsackInstanceGenerator():
         self.master.bind('<Alt-F4>', lambda event: self.exitmenu())
         self.master.bind('<Control-F1>', lambda event: helpmenu())
         self.master.bind('<Control-i>', lambda event: aboutmenu())
+        self.master.bind('<Control-o>', lambda event: self.gen())
     
     def gen(self):
         try:
             if (int(self.itemtext.get(1.0, END)) > 1) and (int(self.maxweighttext.get(1.0, END))>0):
-                pass
+                filenamesave = filedialog.asksaveasfilename(initialdir="/",
+                                                            title="Select file",
+                                                            filetypes=(("txt files", "*.txt"),
+                                                                        ("all files", "*.*")))
+                if ".txt" in filenamesave:
+                    with open(filenamesave, 'w') as f:
+                        f.write(str(self.itemtext.get(1.0, END)) +' ' + str(self.maxweighttext.get(1.0,END))+ "\n")
+                        for _ in range(int(self.itemtext.get(1.0, END))):
+                            f.write(str(rd.randint(10,1000)) + ' ' + str(rd.randint(10,1000)) + "\n")
+                else:
+                    msg.showerror("Abort", "Abort")
             else:
                 msg.showerror("Value Error", "Number of iteams must be higher than 1 and max weight must be higher than 0")
         except ValueError:
