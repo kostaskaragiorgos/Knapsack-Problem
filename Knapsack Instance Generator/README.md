@@ -53,19 +53,19 @@ All project documentation is located in the `./doc`  folder.
 
 ### Radon_cc
 
-
+<p><img src="images/knapsack instance generator radon cc.png" title="knapsack instance generator radon cc"/> </p>
 
 ### Radon_hal
 
-
+<p><img src="images/knapsack instance generator radon hal.png" title="knapsack instance generator radon hal"/> </p>
 
 ### Radon_mi
 
-
+<p><img src="images/knapsack instance generator radon mi.png" title="knapsack instance generator radon mi"/> </p>
 
 ### Radon_raw
 
-
+<p><img src="images/knapsack instance generator radon cc.png" title="knapsack instance generator radon raw"/> </p>
 
 ## Keybinds
 
