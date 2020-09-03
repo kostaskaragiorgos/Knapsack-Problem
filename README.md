@@ -25,17 +25,7 @@
 
 ## Dependencies
 
-To install the dependencies
-
-<ul>
-  <li> Numpy (conda install -c anaconda numpy) </li>
-  <li> second way to install numpy( pip install numpy) </li>
-  <li> Pandas (conda install -c anaconda pandas) </li>
-  <li> second way to install pandas ( pip install pandas) </li>
-</ul>
-
-
-or run
+To install the dependencies run
 
 ```shell
 pip install -r requirements.txt
@@ -51,29 +41,32 @@ pip install -r requirements.txt
   <li> Exit Alt + F4 </li>
   <li> About Ctrl + I </li>
   <li> Help Ctrl + F1 </li>
-  <li> Generate Ctrl + O </li>
 </ul>
   
 
 ## Knapsack_Problem_Solver_Current_Version
 
-
+<p><img src ="images/knapsack solver version.png" title = "knapsack Solver Cureent Version"/></p>
 
 ## Knapsack_Problem_Solver_Radon
 
 ### Knapsack_Problem_Solver_Radon_cc
 
+<p><img src ="images/knapsack solver radon cc.png" title = "knapsack Solver Radon cc"/></p>
 
 ### Knapsack_Problem_Solver_Radon_hal
+
+<p><img src ="images/knapsack solver radon hal.png" title = "knapsack Solver Radon hal"/></p>
 
 
 ### Knapsack_Problem_Solver_Radon_mi
 
+<p><img src ="images/knapsack solver radon raw.png" title = "knapsack Solver Radon raw"/></p>
 
 
 ### TSP_SOLVER_Radon_raw
 
-<p><img src ="images/tsp solver/radon/tspsolver radon raw.png" title = "TSP Solver Radon mi"/></p>
+<p><img src ="images/knapsack solver radon raw.png" title = "knapsack Solver Radon raw"/></p>
 
 
 
