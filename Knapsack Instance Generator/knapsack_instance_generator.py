@@ -51,7 +51,15 @@ class KnapsackInstanceGenerator():
         self.master.bind('<Control-i>', lambda event: aboutmenu())
     
     def gen(self):
-        pass
+        try:
+            if (int(self.itemtext.get(1.0, END)) > 1) and (int(self.maxweighttext.get(1.0, END))>0):
+                pass
+            else:
+                msg.showerror("Value Error", "Number of iteams must be higher than 1 and max weight must be higher than 0")
+        except ValueError:
+            msg.showerror("Value Error", "Number of iteams must be higher than 1 and max weight must be higher than 0")
+        self.itemtext.delete(1.0, END)
+        self.maxweighttext.delete(1.0, END)
         
     def exitmenu(self):
         """ exit menu"""
