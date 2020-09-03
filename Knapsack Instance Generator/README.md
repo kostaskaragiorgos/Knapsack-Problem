@@ -43,6 +43,8 @@ pip install -r requirements.txt
 
 ## Current_Version
 
+<p><img src ="images/knapsack instance generator version.png" title= "Knapsack instance generator version"/> </p>
+
 ## Documentation
 
 All project documentation is located in the `./doc`  folder.
