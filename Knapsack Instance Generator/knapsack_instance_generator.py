@@ -53,8 +53,10 @@ class KnapsackInstanceGenerator():
 
     def save_to_file(self, filename):
         """ saves the instance to a .txt file"""
+        v1 = self.itemtext.get(1.0, END)
+        v2 = self.maxweighttext.get(1.0, END)
         with open(filename, 'w') as f:
-            f.write(str(self.itemtext.get(1.0, END)) +' ' + str(self.maxweighttext.get(1.0, END))+ "\n")
+            f.write(str(int(v1)) + ' ' + str(int(v2)) + "\n")
             for _ in range(int(self.itemtext.get(1.0, END))):
                 f.write(str(rd.randint(10, 1000)) + ' ' + str(rd.randint(10, 1000)) + "\n")
 
