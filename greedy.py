@@ -1,4 +1,10 @@
 def greedy(items, maxWeight, keyFunction):
+    """ greedy algorithm to solve knapsack problem
+    Args:
+        items: a list of items
+        maxWeight: the max amount of weight
+        keyFunction: the function to use for calculation
+    """
     itemsCopy = sorted(items, key=keyFunction, reverse=True)
     result = []
     totalValue=0.0
