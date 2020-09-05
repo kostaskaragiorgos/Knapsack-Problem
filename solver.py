@@ -27,7 +27,7 @@ class KnapsackSolver():
         self.file_menu.add_command(label="Insert a file",
                                    accelerator='Ctrl+O', command=self.insertfile)
         self.file_menu.add_command(label="Solve", accelerator='Alt+F5', command=self.solve)
-        self.file_menu.add_command(label="Close file", accelerator="Ctrl+F5")
+        self.file_menu.add_command(label="Close file", accelerator="Ctrl+F5", command=self.cf)
         self.file_menu.add_command(label="Exit", accelerator='Alt+F4', command=self.exitmenu)
         self.menu.add_cascade(label="File", menu=self.file_menu)
         self.about_menu = Menu(self.menu, tearoff=0)
@@ -40,7 +40,7 @@ class KnapsackSolver():
         self.master.bind('<Control-o>', lambda event: self.insertfile())
         self.master.bind('<Alt-F5>', lambda event: self.solve())
         self.master.bind('<Alt-F4>', lambda event: self.exitmenu())
-        #self.master.bind('<Control-F5>', lambda event: self.cf())
+        self.master.bind('<Control-F5>', lambda event: self.cf())
         self.master.bind('<Control-F1>', lambda event: helpmenu())
         self.master.bind('<Control-i>', lambda event: aboutmenu())
 
@@ -52,6 +52,19 @@ class KnapsackSolver():
         self.varnumset.set(setslist[0])
         self.popupsetmenu = OptionMenu(self.master, self.varnumset, *setslist)
         self.popupsetmenu.pack()
+    
+    def cf(self):
+        """ closes the .txt file """
+        if self.filed == "":
+            msg.showerror("ERROR", "NO FILE IMPORTED TO CLOSE")
+        else:
+            self.filed = ""
+            self.solvb.forget()
+            msg.showinfo("SUCCESS", "FILE CLOSED")
+    def file_verification_gui(self):
+        """ inserted gui after verification """
+        self.solvb = Button(self.master, text="Solve", command=self.solve)
+        self.solvb.pack()
 
     def file_verification(self):
         """ verifies that the inserted file is a knapsack problem instance """
@@ -81,7 +94,7 @@ class KnapsackSolver():
     def solve(self):
         listofitems = []
         for i in range(len(self.item)):
-            listofitems.append(Item(int(self.item[i]), int(self.weight[i])))
+            listofitems.append(Item(float(self.item[i]), float(self.weight[i])))
         if self.varnumset.get() == "Value":
             result, totalvalue = greedy(listofitems, int(self.maxW), value)
         elif self.varnumset.get() == "Density":
