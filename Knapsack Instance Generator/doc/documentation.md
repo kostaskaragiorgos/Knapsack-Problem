@@ -6,6 +6,16 @@
 
 You can generate an instance using menu File --> Generate or Ctrl + O keybind
 
+<p><img src ="doc images/File menu/generate.png" title = "Generate menu"/> </p>
+
+if either the number of items or the amount of weight is lower than 1 an error window pops up
+
+<p><img src ="doc images/File menu/error.png" title = "Error menu"/> </p>
+
+after you save the instance to a .txt file an informative message pops up 
+
+<p><img src="doc images/File menu/instance creation.png" title="Instance Creation"/></p>
+
 
 ## Exit
 
