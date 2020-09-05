@@ -37,7 +37,7 @@ pip install -r requirements.txt
  <li> ./doc (documentation folder) </li>
  <li> ./images (images folder) </li>
  <li> knapsack_instance_generator.py(the main file) </li>
- <li>  keybinds.txt(keybinds file) </li>
+ <li> keybinds.txt(keybinds file) </li>
 </ul>
 
 

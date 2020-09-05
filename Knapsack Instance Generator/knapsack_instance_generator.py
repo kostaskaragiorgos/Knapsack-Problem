@@ -7,7 +7,7 @@ from tkinter import messagebox as msg
 import random as rd
 def helpmenu():
     """ help menu """
-    msg.showinfo("HELP", "HELP ")
+    msg.showinfo("HELP", "HELP\nGenerates a knapsack instance ")
 def aboutmenu():
     """ about """
     msg.showinfo("About", "About \nVersion 1.0")
@@ -71,6 +71,7 @@ class KnapsackInstanceGenerator():
                                                                        ("all files", "*.*")))
                 if ".txt" in filenamesave:
                     self.save_to_file(filenamesave)
+                    msg.showinfo("Success", "Success")
                 else:
                     msg.showerror("Abort", "Abort")
             else:
