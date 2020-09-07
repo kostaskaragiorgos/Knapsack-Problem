@@ -54,6 +54,9 @@ pip install -r requirements.txt
   <li> Help Ctrl + F1 </li>
 </ul>
   
+## Documentation
+
+All project documentation is located in the `./doc`  folder.
 
 ## Knapsack_Problem_Solver_Current_Version
 
