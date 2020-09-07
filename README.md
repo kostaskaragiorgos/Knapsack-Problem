@@ -9,6 +9,7 @@
   * [Table of contents](#Table_of_contents)
   * [Files/Folders](#Files/Folders)
   * [Dependencies](#Dependencies)
+  * [Documentation](#Documentation)
   * [Knapsack Problem Solver](#Knapsack-Problem-Solver)
     * [Knapsack Problem SolverKeybinds](#Knapsack_Problem_Solver_Keybinds)
     * [Knapsack Problem Solver Current Version](#Knapsack_Problem_Solver_Current_Version)
