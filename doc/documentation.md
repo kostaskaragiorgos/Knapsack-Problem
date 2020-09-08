@@ -4,7 +4,7 @@
 
 ## Insert a file
 
-You can insert a file using menu File --> Insert a file or by using Ctrl + O keybind
+You can insert a file by using menu File --> Insert a file or by using Ctrl + O keybind
 
 <p><img src = "images/file_menu/insert a file.png" title="Insert file"/> </p>
 
@@ -16,9 +16,16 @@ else
 
 <p><img src = "images/file_menu/success.png" title="Successful Insertion"/> </p>
 
+## Solve
+
+You can solve the problem by using menu File --> Solve or by using Alt + F5 keybind
+
+<p><img src = "images/file_menu/solve menu.png" title= "Solve menu"/></p>
+
+
 ## Close file
 
-You can close a file using File --> Close file or by using Ctrl + F5 keybind
+You can close a file by using File --> Close file or by using Ctrl + F5 keybind
 
 <p><img src= "images/file_menu/close file menu.png" title="Close file menu"/> </p>
 
@@ -33,7 +40,7 @@ else a success message window pops up
 ## Exit
 
 
-You can close the app using menu File --> Exit or using Alt+F4 keybind
+You can close the app by using menu File --> Exit or using Alt+F4 keybind
 
 <p><img src = "images/file_menu/exit menu.png" title="Close app"/></p> 
 
