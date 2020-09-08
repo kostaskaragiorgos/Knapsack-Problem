@@ -92,17 +92,19 @@ class KnapsackSolver():
             msg.showerror("ERROR", "YOU NEED TO CLOSE THE FILE")
     
     def solve(self):
-        listofitems = []
-        for i in range(len(self.item)):
-            listofitems.append(Item(float(self.item[i]), float(self.weight[i])))
-        if self.varnumset.get() == "Value":
-            result, totalvalue = greedy(listofitems, int(self.maxW), value)
-        elif self.varnumset.get() == "Density":
-            result, totalvalue = greedy(listofitems, int(self.maxW), density)
+        if self.filed == "":
+            msg.showerror("ERROR", "NO KNAPSACK PROBLEM INSTANCE INSERTED")
         else:
-            result, totalvalue = greedy(listofitems, int(self.maxW), weightInverse)
-        msg.showinfo("Solution:", str(totalvalue))
-
+            listofitems = []
+            for i in range(len(self.item)):
+                listofitems.append(Item(float(self.item[i]), float(self.weight[i])))
+            if self.varnumset.get() == "Value":
+                result, totalvalue = greedy(listofitems, int(self.maxW), value)
+            elif self.varnumset.get() == "Density":
+                result, totalvalue = greedy(listofitems, int(self.maxW), density)
+            else:
+                result, totalvalue = greedy(listofitems, int(self.maxW), weightInverse)
+            msg.showinfo("Solution:", str(totalvalue))
     def exitmenu(self):
         """ exit """
         if msg.askokcancel("Quit?", "Really quit?"):
