@@ -22,10 +22,13 @@ You can close a file using File --> Close file or by using Ctrl + F5 keybind
 
 <p><img src= "images/file_menu/close file menu.png" title="Close file menu"/> </p>
 
-if there is no file imported an error message pops up
+if there is no file imported an error message window pops up
 
 <p><img src= "images/file_menu/no file to close.png" title="No file to close"/> </p>
 
+else a success message window pops up
+
+<p><img src= "images/file_menu/close file success.png" title="Success to close"/> </p>
 
 ## Exit
 
