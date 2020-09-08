@@ -60,9 +60,12 @@ An informative message pops up
 
 <p><img src="images/about_menu/about.png" title="about menu"/></p> 
 
-# About menu
+# Help menu
 
 You can show info about the app by using menu Help --> Help or using Alt+F1 keybind
 
-
 <p><img src="images/help_menu/help menu.png" title="help menu"/></p>
+
+An informative message pops up
+
+<p><img src="images/help_menu/help.png" title="help"/></p> 
