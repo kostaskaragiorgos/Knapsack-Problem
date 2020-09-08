@@ -104,7 +104,7 @@ class KnapsackSolver():
                 result, totalvalue = greedy(listofitems, int(self.maxW), density)
             else:
                 result, totalvalue = greedy(listofitems, int(self.maxW), weightInverse)
-            msg.showinfo("Solution:", str(totalvalue))
+            msg.showinfo("Solution:", "Value:"+str(totalvalue))
     def exitmenu(self):
         """ exit """
         if msg.askokcancel("Quit?", "Really quit?"):
