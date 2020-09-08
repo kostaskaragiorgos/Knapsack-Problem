@@ -51,3 +51,11 @@ An informative message pops up
 You press ok to close the app or cancel if you don't want
 
 # About menu
+
+You can show info about the app by using menu About --> About or using Ctrl+i keybind
+
+<p><img src="images/about_menu/about menu.png" title="about menu"/></p>
+
+An informative message pops up
+
+<p><img src="images/about_menu/about.png" title="about menu"/></p> 
