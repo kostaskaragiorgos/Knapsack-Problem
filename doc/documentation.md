@@ -49,3 +49,5 @@ An informative message pops up
 <p><img src ="images/file_menu/exit menu pop up.png" title="close app pop up"/> </p>
 
 You press ok to close the app or cancel if you don't want
+
+# About menu
