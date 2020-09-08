@@ -59,3 +59,7 @@ You can show info about the app by using menu About --> About or using Ctrl+i ke
 An informative message pops up
 
 <p><img src="images/about_menu/about.png" title="about menu"/></p> 
+
+# About menu
+
+You can show info about the app by using menu Help --> Help or using Alt+F1 keybind
