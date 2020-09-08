@@ -16,6 +16,14 @@ else
 
 <p><img src = "images/file_menu/success.png" title="Successful Insertion"/> </p>
 
+## Close file
+
+You can close a file using File --> Close file or by using Ctrl + F5 keybind
+
+<p><img src= "images/file_menu/close file menu.png" title="Close file menu"/> </p>
+
+
+
 
 ## Exit
 
