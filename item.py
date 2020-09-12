@@ -1,4 +1,19 @@
 class Item(object):
+    """ 
+    A class to represent an item.
+    '''
+    Attributes
+    ----------
+    value : float
+        the value of the item
+    weight : float
+        the weight of the item
+    
+    Methods
+    -------
+    getValue()
+    getWeight()
+    """
     def __init__(self, value, weight):
         self.value = float(value)
         self.weight = float(weight)
