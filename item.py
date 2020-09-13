@@ -1,5 +1,5 @@
-class Item(object):
-    """ 
+class Item():
+    """
     A class to represent an item.
     '''
     Attributes
@@ -8,7 +8,7 @@ class Item(object):
         the value of the item
     weight : float
         the weight of the item
-    
+
     Methods
     -------
     getValue()
@@ -28,13 +28,13 @@ class Item(object):
         
         self.value = float(value)
         self.weight = float(weight)
-    
+
     def getValue(self):
         return self.value
-    
+
     def getWeight(self):
         return self.weight
-    
+
     def __str__(self):
         return 'Value:' + str(self.value) + ' Weight:' + str(self.weight)
 
@@ -47,3 +47,4 @@ def weightInverse(item):
 
 def density(item):
     return item.getValue()/item.getWeight()
+    
