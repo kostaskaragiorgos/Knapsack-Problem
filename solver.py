@@ -97,14 +97,14 @@ class KnapsackSolver():
         else:
             listofitems = []
             for i in range(len(self.item)):
-                listofitems.append(Item(float(self.item[i]), float(self.weight[i])))
+                listofitems.append(Item(str(self.item[i]),float(self.item[i]), float(self.weight[i])))
             if self.varnumset.get() == "Value":
                 result, totalvalue = greedy(listofitems, int(self.maxW), value)
             elif self.varnumset.get() == "Density":
                 result, totalvalue = greedy(listofitems, int(self.maxW), density)
             else:
                 result, totalvalue = greedy(listofitems, int(self.maxW), weightInverse)
-            msg.showinfo("Solution:", "Value:"+str(totalvalue))
+            msg.showinfo("Solution:", "Value:"+str(totalvalue)+"\n Items:"+str([i.getName() for i in result]))
     def exitmenu(self):
         """ exit """
         if msg.askokcancel("Quit?", "Really quit?"):
