@@ -14,7 +14,7 @@ class Item():
     getValue()
     getWeight()
     """
-    def __init__(self, value, weight):
+    def __init__(self,name, value, weight):
         """
         Constructs all the necessary attributes for the item object.
 
@@ -25,7 +25,7 @@ class Item():
             weight : float
                 the weight of the item
         """
-        
+        self.name = str(name)
         self.value = float(value)
         self.weight = float(weight)
 
@@ -34,9 +34,12 @@ class Item():
 
     def getWeight(self):
         return self.weight
+    
+    def getName(self):
+        return self.name
 
     def __str__(self):
-        return 'Value:' + str(self.value) + ' Weight:' + str(self.weight)
+        return 'Name:' + str(self.name) + 'Value:' + str(self.value) + ' Weight:' + str(self.weight)
 
 
 def value(item):
