@@ -20,7 +20,6 @@ class KnapsackSolver():
         self.master.geometry("250x120")
         self.master.resizable(False, False)
         self.filed = ""
-
         #menu
         self.menu = Menu(self.master)
         self.file_menu = Menu(self.menu, tearoff=0)
@@ -30,6 +29,9 @@ class KnapsackSolver():
         self.file_menu.add_command(label="Close file", accelerator="Ctrl+F5", command=self.cf)
         self.file_menu.add_command(label="Exit", accelerator='Alt+F4', command=self.exitmenu)
         self.menu.add_cascade(label="File", menu=self.file_menu)
+        self.show_menu = Menu(self.menu, tearoff=0)
+        self.show_menu.add_command(label="Show Solution", accelerator='Ctrl+F4', command=self.show_solution)
+        self.menu.add_cascade(label="Show", menu=self.show_menu)
         self.about_menu = Menu(self.menu, tearoff=0)
         self.about_menu.add_command(label="About", accelerator='Ctrl+I', command=aboutmenu)
         self.menu.add_cascade(label="About", menu=self.about_menu)
@@ -53,6 +55,7 @@ class KnapsackSolver():
         self.popupsetmenu = OptionMenu(self.master, self.varnumset, *setslist)
         self.popupsetmenu.pack()
     
+    
     def cf(self):
         """ closes the .txt file """
         if self.filed == "":
@@ -70,6 +73,7 @@ class KnapsackSolver():
         """ verifies that the inserted file is a knapsack problem instance """
         if ".txt" in self.filed:
             try:
+                self.solution = {}
                 self.solvb = Button(self.master, text="Solve", command=self.solve)
                 self.solvb.pack()
                 self.nofi, self.maxW, self.item, self.weight = fileparser(self.filed)
@@ -91,6 +95,14 @@ class KnapsackSolver():
         else:
             msg.showerror("ERROR", "YOU NEED TO CLOSE THE FILE")
     
+    def show_solution(self):
+        if self.solution == {}:
+            msg.showerror("Error", "THERE IS NO AVAILABLE SOLUTION.\n USE THE SOLVE BUTTON")
+        else:
+            msg.showinfo("Solution", "Value:"+ str(self.solution.get("Value")) + "Items"+ str(self.solution.get("Items")))
+
+
+
     def solve(self):
         if self.filed == "":
             msg.showerror("ERROR", "NO KNAPSACK PROBLEM INSTANCE INSERTED")
@@ -104,11 +116,13 @@ class KnapsackSolver():
                 result, totalvalue = greedy(listofitems, int(self.maxW), density)
             else:
                 result, totalvalue = greedy(listofitems, int(self.maxW), weightInverse)
+            self.solution.update({"Value":totalvalue,"Items":str([i.getName() for i in result])})
             msg.showinfo("Solution:", "Value:"+str(totalvalue)+"\n Items:"+str([i.getName() for i in result]))
     def exitmenu(self):
         """ exit """
         if msg.askokcancel("Quit?", "Really quit?"):
             self.master.destroy()
+    
 
 def main():
     """ main function """
