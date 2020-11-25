@@ -4,6 +4,8 @@ class Item():
     '''
     Attributes
     ----------
+    name  : str
+        the name of the item
     value : float
         the value of the item
     weight : float
@@ -11,6 +13,7 @@ class Item():
 
     Methods
     -------
+    getName()
     getValue()
     getWeight()
     """
@@ -20,6 +23,8 @@ class Item():
 
         Parameters
         ----------
+            name  : str
+                then name of the item
             value : float
                 the value of the item
             weight : float
