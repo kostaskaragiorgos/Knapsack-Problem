@@ -4,6 +4,9 @@ def greedy(items, maxWeight, keyFunction):
         items: a list of items
         maxWeight: the max amount of weight
         keyFunction: the function to use for calculation
+    Return:
+        result: the items of the solution
+        totalValue: the total value of the solution
     """
     itemsCopy = sorted(items, key=keyFunction, reverse=True)
     result = []
