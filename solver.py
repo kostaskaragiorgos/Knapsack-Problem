@@ -20,6 +20,7 @@ class KnapsackSolver():
         self.master.geometry("250x120")
         self.master.resizable(False, False)
         self.filed = ""
+        self.solution = {}
         #menu
         self.menu = Menu(self.master)
         self.file_menu = Menu(self.menu, tearoff=0)
