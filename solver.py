@@ -21,6 +21,7 @@ class KnapsackSolver():
         self.master.resizable(False, False)
         self.filed = ""
         self.solution = {}
+        self.listofitems = []
         #menu
         self.menu = Menu(self.master)
         self.file_menu = Menu(self.menu, tearoff=0)
@@ -64,6 +65,7 @@ class KnapsackSolver():
             msg.showerror("ERROR", "NO FILE IMPORTED TO CLOSE")
         else:
             self.filed = ""
+            self.listofitems = []
             self.solvb.forget()
             msg.showinfo("SUCCESS", "FILE CLOSED")
     def file_verification_gui(self):
@@ -79,6 +81,8 @@ class KnapsackSolver():
                 self.solvb = Button(self.master, text="Solve", command=self.solve)
                 self.solvb.pack()
                 self.nofi, self.maxW, self.item, self.weight = fileparser(self.filed)
+                for i in range(len(self.item)):
+                    self.listofitems.append(Item(str(self.item[i]),float(self.item[i]), float(self.weight[i])))
                 msg.showinfo("SUCCESS",
                              "THE FILE SUCCESSFULLY INSERTED ")
             except ValueError:
@@ -109,15 +113,12 @@ class KnapsackSolver():
         if self.filed == "":
             msg.showerror("ERROR", "NO KNAPSACK PROBLEM INSTANCE INSERTED")
         else:
-            listofitems = []
-            for i in range(len(self.item)):
-                listofitems.append(Item(str(self.item[i]),float(self.item[i]), float(self.weight[i])))
             if self.varnumset.get() == "Value":
-                result, totalvalue = greedy(listofitems, int(self.maxW), value)
+                result, totalvalue = greedy(self.listofitems, int(self.maxW), value)
             elif self.varnumset.get() == "Density":
-                result, totalvalue = greedy(listofitems, int(self.maxW), density)
+                result, totalvalue = greedy(self.listofitems, int(self.maxW), density)
             else:
-                result, totalvalue = greedy(listofitems, int(self.maxW), weightInverse)
+                result, totalvalue = greedy(self.listofitems, int(self.maxW), weightInverse)
             self.solution.update({"Value":totalvalue,"Items":str([i.getName() for i in result])})
             msg.showinfo("Solution:", "Value:"+str(totalvalue)+"\n Items:"+str([i.getName() for i in result]))
     def exitmenu(self):
