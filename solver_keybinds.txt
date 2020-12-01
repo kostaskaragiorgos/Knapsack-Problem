@@ -1,10 +1,14 @@
 File menu
-=================
+========================
 Insert a File  Ctrl + O
 Solve Alt + F5
 Close File Ctrl + F5
 Exit Alt + F4
 =============
+Show menu
+=======================
+Show solution Ctrl + F4
+=======================
 About menu
 ==============
 About Ctrl + I
