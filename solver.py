@@ -40,6 +40,7 @@ class KnapsackSolver():
         self.help_menu.add_command(label="Help", accelerator='Ctrl+F1', command=helpmenu)
         self.menu.add_cascade(label="Help", menu=self.help_menu)
         self.master.config(menu=self.menu)
+        self.master.bind('<Control-F4>', lambda event: self.show_solution())
         self.master.bind('<Control-o>', lambda event: self.insertfile())
         self.master.bind('<Alt-F5>', lambda event: self.solve())
         self.master.bind('<Alt-F4>', lambda event: self.exitmenu())
