@@ -1,4 +1,4 @@
-class Item():
+class Item:
     """
     A class to represent an item.
     '''
@@ -17,7 +17,7 @@ class Item():
     getValue()
     getWeight()
     """
-    def __init__(self,name, value, weight):
+    def __init__(self, name, value, weight):
         """
         Constructs all the necessary attributes for the item object.
 
