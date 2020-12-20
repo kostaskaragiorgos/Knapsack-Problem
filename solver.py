@@ -67,6 +67,7 @@ class KnapsackSolver():
         else:
             self.filed = ""
             self.listofitems = []
+            self.solution = {}
             self.solvb.forget()
             msg.showinfo("SUCCESS", "FILE CLOSED")
     def file_verification_gui(self):
