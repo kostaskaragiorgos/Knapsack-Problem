@@ -28,6 +28,7 @@ class KnapsackSolver():
         self.file_menu.add_command(label="Insert a file",
                                    accelerator='Ctrl+O', command=self.insertfile)
         self.file_menu.add_command(label="Solve", accelerator='Alt+F5', command=self.solve)
+        self.file_menu.add_command(label="Save Solution", accelerator='Ctrl+S', command=self.save_solution)
         self.file_menu.add_command(label="Close file", accelerator="Ctrl+F5", command=self.cf)
         self.file_menu.add_command(label="Exit", accelerator='Alt+F4', command=self.exitmenu)
         self.menu.add_cascade(label="File", menu=self.file_menu)
@@ -117,7 +118,6 @@ class KnapsackSolver():
     def save_solution(self):
         if self.solution == {}:
             msg.showerror("Error", "THERE IS NO AVAILABLE SOLUTION.\n USE THE SOLVE BUTTON")
-
 
     def solve(self):
         """ sholves the problem"""
