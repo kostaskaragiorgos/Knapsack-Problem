@@ -93,6 +93,9 @@ class KnapsackSolver():
             except ValueError:
                 msg.showerror("ERROR", "NO KNAPSACK PROBLEM INSTANCE INSERTED")
                 self.filed = ""
+                self.listofitems = []
+                self.solution = {}
+                self.solvb.forget()
         else:
             msg.showerror("Error", "NO TXT FILE ADDED")
 
