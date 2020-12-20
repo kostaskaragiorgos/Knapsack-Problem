@@ -50,6 +50,13 @@ An informative message pops up
 
 You press ok to close the app or cancel if you don't want
 
+
+# Show menu
+
+## Show solution
+
+You can show the solution by using menu Show --> Show Solution or using Ctrl+F4 keybind
+
 # About menu
 
 You can show info about the app by using menu About --> About or using Ctrl+i keybind
