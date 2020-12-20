@@ -118,6 +118,9 @@ class KnapsackSolver():
     def save_solution(self):
         if self.solution == {}:
             msg.showerror("Error", "THERE IS NO AVAILABLE SOLUTION.\n USE THE SOLVE BUTTON")
+        else:
+            with open("sol"+str(self.filed.split("/")[-1]), 'w') as f:
+                f.write(str(self.solution))
 
     def solve(self):
         """ sholves the problem"""
