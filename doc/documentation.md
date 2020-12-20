@@ -51,11 +51,17 @@ An informative message pops up
 You press ok to close the app or cancel if you don't want
 
 
+
 # Show menu
 
 ## Show solution
 
 You can show the solution by using menu Show --> Show Solution or using Ctrl+F4 keybind
+
+<p><img src ="images/show_menu/show menu.png" title="show menu"/> </p>
+
+An informative message pops up
+
 
 # About menu
 
