@@ -113,7 +113,10 @@ class KnapsackSolver():
             msg.showinfo("Solution",
                          "Value:"+ str(self.solution.get("Value")) +
                          "Items"+ str(self.solution.get("Items")))
-
+    
+    def save_solution(self):
+        if self.solution == {}:
+            msg.showerror("Error", "THERE IS NO AVAILABLE SOLUTION.\n USE THE SOLVE BUTTON")
 
 
     def solve(self):
